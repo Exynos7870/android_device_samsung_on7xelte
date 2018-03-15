@@ -16,7 +16,6 @@
 ** limitations under the License.
 */
 -->
-
 <resources>
     <!-- Minimum screen brightness setting allowed by the power manager.
          The user is forbidden from setting the brightness below this level. -->
@@ -45,9 +44,11 @@
          in hardware. -->
     <bool name="config_setColorTransformAccelerated">true</bool>
 
-
     <!-- Control whether Night display is available. This should only be enabled on devices
          that have a HWC implementation that can apply the matrix passed to setColorTransform
          without impacting power, performance, and app compatibility (e.g. protected content). -->
     <bool name="config_nightDisplayAvailable">true</bool>
+
+    <!-- For performance and storage reasons, limit the number of fingerprints per user -->
+    <integer name="config_fingerprintMaxTemplatesPerUser">3</integer>
 </resources>
