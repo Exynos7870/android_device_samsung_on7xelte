@@ -31,30 +31,26 @@ void vendor_load_properties()
 {
     const std::string bootloader = android::base::GetProperty("ro.bootloader", "");
     const std::string bl_model = bootloader.substr(0, MODEL_NAME_LEN);
-    const std::string bl_build = bootloader.substr(MODEL_NAME_LEN);
+    const std::string bl_build = bootloader.substr(BUILD_NAME_LEN);
+    const std::string device = "on7xelte";
 
     std::string model;
-    std::string device;
     std::string name;
     std::string description;
     std::string fingerprint;
 
     model = "SM-" + bl_model;
 
-    for (size_t i = 0; i < VARIANT_MAX; i++) {
-        std::string model_ = all_variants[i]->model;
-        if (model.compare(model_) == 0) {
-            device = all_variants[i]->codename;
-            break;
+    for (size_t i = 0; i < TOTAL_VARIANTS; i++) {
+        if (model.compare(all_variants[i]->model) == 0) {
+            name = all_variants[i]->codename;
         }
     }
 
-    if (device.size() == 0) {
-        LOG(ERROR) << "Could not detect device, forcing on7xeltedd";
-        device = "on7xelte";
+    if (name.size() == 0) {
+        LOG(ERROR) << "Could not detect codename, forcing on7xeltedd";
+        name = "on7xeltedd";
     }
-
-    name = device + "dd";
 
     description = name + "-user 7.0 NRD90M " + bl_model + bl_build + " release-keys";
     fingerprint = "samsung/" + name + "/" + device + ":7.0/NRD90M/" + bl_model + bl_build + ":user/release-keys";

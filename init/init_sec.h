@@ -3,15 +3,7 @@
 
 #include <string.h>
 
-enum device_variant {
-    VARIANT_G610F = 0,
-    VARIANT_G610L,
-    VARIANT_G610K,
-    VARIANT_G610S,
-    VARIANT_G610M,
-    VARIANT_G610Y,
-    VARIANT_MAX
-};
+#define TOTAL_VARIANTS 6 //Total number of variants
 
 typedef struct {
     std::string model;
@@ -48,7 +40,7 @@ static const variant G610Y_model = {
     .codename = "on7xeltezt"
 };
 
-static const variant *all_variants[VARIANT_MAX] = {
+static const variant *all_variants[TOTAL_VARIANTS] = {
     &G610F_model,
     &G610L_model,
     &G610K_model,
