@@ -1,5 +1,16 @@
-on boot
+on post-fs-data
+    # Mobicore
+    export MC_AUTH_TOKEN_PATH /efs
+    mkdir /efs/TEE  0770 radio system
+    chmod 0660 /dev/t-base-tui
+    chown system system /dev/t-base-tui
+    start mobicore
 
+on post-fs
+    # Mobicore
+    setprop sys.mobicoredaemon.enable stopped
+
+on boot
 # Permissions for Accelerometer_sensor
     chown system radio /sys/class/sensors/accelerometer_sensor/raw_data
     chown system radio /sys/class/sensors/accelerometer_sensor/calibration
@@ -107,6 +118,18 @@ on boot
 
 # SSWAP
     write /proc/sys/vm/swappiness 130
+
+on nonencrypted
+    mkdir /data/misc/mcRegistry 0775 system system
+
+on property:vold.decrypt=trigger_restart_framework
+    mkdir /data/misc/mcRegistry 0775 system system
+
+service mobicore /system/bin/mcDriverDaemon -r /system/app/FFFFFFFF000000000000000000000001.drbin -r /system/app/mcRegistry/ffffffffd0000000000000000000000a.tlbin -r /system/app/mcRegistry/ffffffffd00000000000000000000016.tlbin -r /system/app/mcRegistry/ffffffffd0000000000000000000001c.tlbin
+    class core
+    user system
+    group system
+    disabled
 
 service sswap /sbin/sswap -s -f 1536
     class core
