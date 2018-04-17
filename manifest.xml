@@ -4,7 +4,7 @@
       -->
     <hal format="hidl">
         <name>android.hardware.bluetooth</name>
-        <transport>hwbinder</transport>
+        <transport arch="32">passthrough</transport>
         <version>1.0</version>
         <interface>
             <name>IBluetoothHci</name>
@@ -56,8 +56,18 @@
       -->
     <hal format="hidl">
         <name>android.hardware.drm</name>
-        <transport arch="32">passthrough</transport>
+        <transport>hwbinder</transport>
         <version>1.0</version>
+        <interface>
+            <name>ICryptoFactory</name>
+            <instance>widevine</instance>
+            <instance>default</instance>
+        </interface>
+        <interface>
+             <name>IDrmFactory</name>
+             <instance>widevine</instance>
+             <instance>default</instance>
+         </interface>
     </hal>
 
     <!--
@@ -78,7 +88,7 @@
       -->
     <hal format="hidl">
         <name>android.hardware.gnss</name>
-        <transport arch="32">passthrough</transport>
+        <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
             <name>IGnss</name>
@@ -127,7 +137,7 @@
       -->
     <hal format="hidl">
         <name>android.hardware.keymaster</name>
-        <transport arch="32">passthrough</transport>
+        <transport>hwbinder</transport>
         <version>3.0</version>
         <interface>
             <name>IKeymasterDevice</name>
@@ -153,7 +163,7 @@
       -->
     <hal format="hidl">
         <name>android.hardware.memtrack</name>
-        <transport arch="32">passthrough</transport>
+        <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
             <name>IMemtrack</name>
@@ -211,6 +221,10 @@
         <name>android.hardware.renderscript</name>
         <transport arch="32">passthrough</transport>
         <version>1.0</version>
+        <interface>
+            <name>IDevice</name>
+            <instance>default</instance>
+        </interface>
     </hal>
 
     <!--
@@ -218,8 +232,12 @@
       -->
     <hal format="hidl">
         <name>android.hardware.sensors</name>
-        <transport arch="32">passthrough</transport>
+        <transport>hwbinder</transport>
         <version>1.0</version>
+        <interface>
+            <name>ISensors</name>
+            <instance>default</instance>
+        </interface>
     </hal>
 
     <!--

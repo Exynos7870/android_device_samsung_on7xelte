@@ -116,9 +116,6 @@ on boot
     chmod 0700 /dev/mobicore
     chmod 0660 /dev/s5p-smem
 
-# SSWAP
-    write /proc/sys/vm/swappiness 130
-
 on nonencrypted
     mkdir /data/misc/mcRegistry 0775 system system
 
@@ -130,9 +127,3 @@ service mobicore /system/bin/mcDriverDaemon -r /system/app/FFFFFFFF0000000000000
     user system
     group system
     disabled
-
-service sswap /sbin/sswap -s -f 1536
-    class core
-    user root
-    group root
-    oneshot
