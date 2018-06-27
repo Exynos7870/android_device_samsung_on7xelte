@@ -27,9 +27,6 @@ LOCAL_PATH := device/samsung/on7xelte
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_sec
 
-# SELinux
-BOARD_SEPOLICY_DIRS += device/samsung/on7xelte/sepolicy
-
 # Properties
 TARGET_SYSTEM_PROP += $(LOCAL_PATH)/system.prop
 
