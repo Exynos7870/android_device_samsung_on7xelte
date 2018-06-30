@@ -118,8 +118,8 @@ etc/wifi/nvram_mfg.txt
 etc/wifi/nvram_net.txt
 
 # Noise supppression
-vendor/lib/libLifevibes_lvverx.so
-vendor/lib/libLifevibes_lvvetx.so
+vendor/lib/libLifevibes_lvverx.so:vendor/lib/soundfx/libLifevibes_lvverx.so
+vendor/lib/libLifevibes_lvvetx.so:vendor/lib/soundfx/libLifevibes_lvvetx.so
 
 vendor/etc/nxp/AzControlParams_SPEAKER.txt
 vendor/etc/nxp/LVAZFS_Configuration.txt
