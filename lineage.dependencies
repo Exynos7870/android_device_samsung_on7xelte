@@ -28,7 +28,7 @@
         "target_path": "kernel/samsung/exynos7870"
     },
     {
-        "repository": "proprietary_vendor_samsung",
-        "target_path": "vendor/samsung"
+        "repository": "proprietary_vendor_samsung_on7xelte",
+        "target_path": "vendor/samsung/on7xelte"
     }
 ]
