@@ -6,6 +6,9 @@ on post-fs-data
     chown system system /dev/t-base-tui
     start mobicore
 
+    mkdir /data/biometrics 0700 system system
+    restorecon_recursive /data/biometrics
+
 on post-fs
     # Mobicore
     setprop sys.mobicoredaemon.enable stopped
