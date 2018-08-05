@@ -58,8 +58,8 @@ void vendor_load_properties()
         name = "on7xeltedd";
     }
 
-    description = name + "-user 7.0 NRD90M " + bl_model + bl_build + " release-keys";
-    fingerprint = "samsung/" + name + "/" + device + ":7.0/NRD90M/" + bl_model + bl_build + ":user/release-keys";
+    description = "on7xeltedd-user 7.0 NRD90M G610FDDU1BRG2 release-keys";
+    fingerprint = "samsung/on7xeltedd/on7xelte:7.0/NRD90M/G610FDDU1BRG2:user/release-keys";
 
     LOG(INFO) << "Found bootloader: %s", bootloader.c_str();
     LOG(INFO) << "Setting ro.product.model: %s", model.c_str();
