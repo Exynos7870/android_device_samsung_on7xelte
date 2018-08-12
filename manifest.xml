@@ -1,5 +1,28 @@
 <manifest version="1.0" type="device">
     <!--
+        Audio
+      -->
+    <hal format="hidl">
+        <name>android.hardware.audio</name>
+        <transport arch="32+64">passthrough</transport>
+        <version>2.0</version>
+        <interface>
+            <name>IDevicesFactory</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+
+    <hal format="hidl">
+        <name>android.hardware.audio.effect</name>
+        <transport arch="32+64">passthrough</transport>
+        <version>2.0</version>
+        <interface>
+            <name>IEffectsFactory</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+
+    <!--
         Bluetooth
       -->
     <hal format="hidl">
@@ -172,6 +195,23 @@
     </hal>
 
     <!--
+        OMX
+      -->
+    <hal format="hidl">
+        <name>android.hardware.media.omx</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IOmx</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IOmxStore</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+
+    <!--
         Power
       -->
     <hal format="hidl">
@@ -232,7 +272,7 @@
       -->
     <hal format="hidl">
         <name>android.hardware.sensors</name>
-        <transport>hwbinder</transport>
+        <transport arch="32+64">passthrough</transport>
         <version>1.0</version>
         <interface>
             <name>ISensors</name>
