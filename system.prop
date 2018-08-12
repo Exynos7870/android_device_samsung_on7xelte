@@ -13,7 +13,7 @@ dalvik.vm.heapmaxfree=8m
 ro.sf.lcd_density=480
 
 # Sdcardfs
-ro.sys.sdcardfs=false
+ro.sys.sdcardfs=true
 
 # ro.product.first_api_level indicates the first api level the device has commercially launched on.
 ro.product.first_api_level=23
