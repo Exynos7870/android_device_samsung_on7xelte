@@ -1,0 +1,1 @@
+allow system_server fingerprint_data_file:dir { search rw_dir_perms };
