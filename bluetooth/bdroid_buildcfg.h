@@ -25,4 +25,7 @@
 #define BTIF_HF_WBS_PREFERRED TRUE  /* Use WBS    */
 #define BTA_DISABLE_DELAY 100 /* in milliseconds */
 
+/* Disable the eSCO commands */
+#define BTM_SCO_ENHANCED_SYNC_ENABLED FALSE
+
 #endif
