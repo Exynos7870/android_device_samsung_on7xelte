@@ -1,7 +1,6 @@
-# Bluetooth
+# Bluetooth (OREO)
 bin/prepare_param.sh
-vendor/firmware/bcm4343A0_V0071.0262.hcd
-vendor/firmware/bcm43438A1_V0062.0267.hcd
+vendor/firmware/bcm43438A1_V0068.0286.hcd
 
 # Camera
 lib/hw/camera.universal7870.so:lib/hw/camera.vendor.universal7870.so
@@ -142,4 +141,3 @@ etc/wifi/bcmdhd_sta.bin
 etc/wifi/cred.conf
 etc/wifi/nvram_mfg.txt
 etc/wifi/nvram_net.txt
-
